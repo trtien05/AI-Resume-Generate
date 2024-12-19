@@ -1,6 +1,6 @@
 {
   "name": "ai-resume-builder",
-  "homepage": "https://dev.ezfasthost.com/builder-resume/",
+  "homepage": "/builder-resume",
   "private": true,
   "version": "0.0.0",
   "type": "module",
