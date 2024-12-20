@@ -3,6 +3,7 @@ import ProductHunt from '@/components/icons/ProductHunt'
 import Reddit from '@/components/icons/Reddit'
 import Youtube from '@/components/icons/Youtube'
 import { AtomIcon, Edit, Share2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function Home() {
   return (
@@ -82,12 +83,12 @@ function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <a
-              href={'/auth/sign-in'}
+            <Link
+              to={'/auth/sign-in'}
               className="inline-block rounded bg-primary px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-700 "
             >
               Get Started Today
-            </a>
+            </Link>
           </div>
         </section>
       </div>
