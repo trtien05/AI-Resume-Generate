@@ -1,11 +1,7 @@
-import { SignIn, useUser } from '@clerk/clerk-react'
-import { redirect } from 'react-router-dom';
+import { SignIn } from '@clerk/clerk-react'
 
 function SignInPage() {
-  const { user } = useUser();
-  if (!user) {
-    redirect('/auth/sign-up')
-  }
+
   return (
     <div className='flex justify-center my-20 items-center'>
       <SignIn

@@ -8,7 +8,7 @@ function App() {
   const { isLoaded, isSignedIn } = useUser();
 
   if (!isSignedIn && isLoaded) {
-    return <Navigate to={'/auth/sign-in'} />
+    return <Navigate to={'/auth/sign-up'} />
   }
 
   return (
