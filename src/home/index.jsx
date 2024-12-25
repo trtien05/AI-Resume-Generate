@@ -84,7 +84,7 @@ function Home() {
 
           <div className="mt-12 text-center">
             <Link
-              to={'/auth/sign-up'}
+              to={'/auth/sign-in'}
               className="inline-block rounded bg-primary px-12 py-3 text-sm font-medium text-white transition hover:bg-blue-700 "
             >
               Get Started Today
