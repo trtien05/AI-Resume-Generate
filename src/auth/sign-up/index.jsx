@@ -1,15 +1,10 @@
-import { SignIn, useUser } from '@clerk/clerk-react'
-import { redirect } from 'react-router-dom';
+import { SignUp } from '@clerk/clerk-react'
 
-function SignInPage() {
-  const { user } = useUser();
-  if (!user) {
-    redirect('/auth/sign-up')
-  }
+function SignUpPage() {
   return (
     <div className='flex justify-center my-20 items-center'>
-      <SignIn
-        path="/auth/sign-in"
+      <SignUp
+        path="/auth/sign-up"
         routing="path"
         fallbackRedirectUrl="/dashboard" // URL sẽ redirect sau khi đăng nhập
         forceRedirectUrl="/dashboard" // URL sẽ redirect sau khi đăng ký
@@ -18,4 +13,4 @@ function SignInPage() {
   )
 }
 
-export default SignInPage
+export default SignUpPage
