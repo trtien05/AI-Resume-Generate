@@ -27,8 +27,22 @@ function Summery({ enabledNext }) {
         const PROMPT = prompt.replace('{jobTitle}', resumeInfo?.jobTitle);
         console.log(PROMPT);
         const result = await AIChatSession.sendMessage(PROMPT);
+        const textResponse = result.response.candidates[0]?.content?.parts[0]?.text;
 
-        setAiGenerateSummeryList(JSON.parse(result.response.text()).summary_data)
+        if (!textResponse) {
+            throw new Error("Response text not found");
+        }
+
+        // Chuyển chuỗi JSON thành object
+        const parsedResponse = JSON.parse(textResponse);
+        const summaries = parsedResponse.summaries;
+
+        if (summaries) {
+            setAiGenerateSummeryList(summaries);
+        } else {
+            console.error("No summaries found in parsed response");
+        }
+        // setAiGenerateSummeryList(JSON.parse(result.response.text()).summary_data)
         setLoading(false);
     }
 
